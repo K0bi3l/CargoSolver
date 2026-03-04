@@ -34,7 +34,7 @@ s_0
 
 ## Algorithm
 
-The solver uses a **fixed-point BFS (worklist algorithm)**:
+The solver uses a fixed-point BFS (worklist algorithm):
 
 1. Enqueue the starting station. Its `PossibleLoads` (arrival cargo) is empty — the train starts with no cargo.
 2. Dequeue a station. Compute departure load: take the station's `PossibleLoads`, remove its `CUnload` type, add its `CLoad` type.
@@ -271,7 +271,7 @@ The program runs in a loop. At each iteration it will prompt you:
 Please enter the path to the input file:
 ```
 
-1. Enter the **path to a test case file** (realtive or absolute), e.g.:
+1. Enter the path to a test case file (realtive or absolute), e.g.:
    ```
    Testcases/StraightLine.txt
    ```

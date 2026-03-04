@@ -66,7 +66,8 @@ CargoSolver/
     ├── BifurcationAndMerge.txt
     ├── Loop.txt
     ├── DisconnectedStations.txt
-    └── SelfLoop.txt
+    ├── SelfLoop.txt
+    └── UnloadAlongRoute.txt
 ```
 
 ### File Responsibilities
@@ -226,6 +227,40 @@ Station 3: Possible Loads = 30
 Station 0: Possible Loads =
 Station 1: Possible Loads = 10, 20
 Station 2: Possible Loads = 20
+```
+
+---
+
+### 6. UnloadAlongRoute.txt — Cargo unloaded mid-route
+
+```
+0 ──→ 1 ──→ 2 ──→ 3
+```
+
+Each station unloads the cargo loaded by the previous one:
+station 1 unloads cargo 5 (loaded at 0), station 2 unloads cargo 7 (loaded at 1),
+station 3 unloads cargo 8 (loaded at 2). Every loaded cargo is eventually unloaded,
+so at each station only the freshly loaded cargo is present.
+
+**Input:**
+```
+4 3
+0 99 5
+1 5 7
+2 7 8
+3 8 99
+0 1
+1 2
+2 3
+0
+```
+
+**Expected output:**
+```
+Station 0: Possible Loads =
+Station 1: Possible Loads = 5
+Station 2: Possible Loads = 7
+Station 3: Possible Loads = 8
 ```
 
 ## Prerequisites
